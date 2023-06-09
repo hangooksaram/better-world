@@ -19,7 +19,6 @@ const usePage = (scrollbar: Scrollbar | null) => {
 
   // 버튼 클릭
   const handlePointClick = (id: number) => {
-    console.log(pageRefs.current[id].offsetTop);
     scrollbar?.scrollTo(0, pageRefs.current[id].offsetTop, 1000);
   };
 

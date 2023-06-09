@@ -82,38 +82,6 @@ const HomePage = ({
           );
         })}
       </div>
-      {/* <NavigationCard
-        id={1}
-        text={"About me"}
-        backgroundColor={"blue"}
-        link={"about"}
-        handlePointClick={() => handlePointClick(1)}
-      />
-
-      <NavigationCard
-        id={2}
-        text={"Skills"}
-        backgroundColor={"blue"}
-        link={"skill"}
-        handlePointClick={() => handlePointClick(2)}
-      />
-
-      <NavigationCard
-        id={3}
-        text={"Project"}
-        backgroundColor={"beige"}
-        link={"project"}
-        width={"100%"}
-        handlePointClick={() => handlePointClick(3)}
-      />
-      <NavigationCard
-        id={4}
-        text={"Contact"}
-        backgroundColor={"green"}
-        link={"contact"}
-        width={"100%"}
-        handlePointClick={() => handlePointClick(4)}
-      /> */}
     </SectionLayout>
   );
 };

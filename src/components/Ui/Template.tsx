@@ -28,5 +28,23 @@ const SectionLayout = styled.section(
     justifyContent: justifyContent ?? "initial",
   })
 );
-
-export { FlexCenter, SectionLayout };
+const NavigationStyledComponent = styled.div(
+  (props: { width: string; backgroundColor: string }) => ({
+    display: "flex",
+    justifyontent: "center",
+    alignItems: "center",
+    padding: "32px",
+    minHeight: "auto",
+    borderRadius: "54px",
+    fontSize: "48px",
+    border: "2px solid black",
+    cursor: "pointer",
+    margin: "8px",
+    backgroundColor: `${props.backgroundColor}`,
+    width: `${props.width || "100%"}px`,
+    position: "relative",
+    overflow: "hidden",
+    color: "white",
+  })
+);
+export { FlexCenter, SectionLayout, NavigationStyledComponent };

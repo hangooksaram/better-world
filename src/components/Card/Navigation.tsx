@@ -1,8 +1,9 @@
 import { css } from "@emotion/css";
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import NavigationDetail from "./NavigationDetail";
 import { Scrollbar } from "smooth-scrollbar/scrollbar";
+import styled from "@emotion/styled";
 
 interface NavigationCardProps {
   id: number;
@@ -12,6 +13,8 @@ interface NavigationCardProps {
   width?: string;
   handlePointClick: (id: number) => void;
 }
+
+const NavigationStyledComponent = styled.div((props) => ({}));
 
 const NavigationCard: React.FC<NavigationCardProps> = ({
   id,
@@ -50,6 +53,7 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
         width: ${width};
         position: relative;
         overflow: hidden;
+        color: white;
       `}
       whileHover={{ scale: 0.95 }}
       transition={{
