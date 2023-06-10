@@ -1,6 +1,7 @@
 "use client";
 
 import NavigationCard from "@/components/Card/Navigation";
+import NewNavigationCard from "@/components/Card/NewNavigation";
 import { SectionLayout } from "@/components/Ui/Template";
 import { css } from "@emotion/css";
 import React from "react";
@@ -70,7 +71,7 @@ const HomePage = ({
       >
         {NavigationList.map(({ id, text, backgroundColor, link, onClick }) => {
           return (
-            <NavigationCard
+            <NewNavigationCard
               key={`navigation-${id}`}
               id={id}
               text={text}
