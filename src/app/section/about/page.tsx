@@ -1,13 +1,13 @@
-import { motion, useScroll, Variants } from "framer-motion";
-import React, { useRef } from "react";
+"use client";
+
+import { motion, Variants } from "framer-motion";
+import React from "react";
 import profileImage from "../../../../public/profile.jpeg";
 import Image from "next/image";
+import { CardComponent } from "@/components/Ui/Card";
+import { css } from "@emotion/css";
 
 const AboutSection = () => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const scroll = useScroll();
-
   const cardVariants: Variants = {
     offscreen: {
       y: 300,
@@ -23,11 +23,24 @@ const AboutSection = () => {
     },
   };
   return (
-    <motion.div>
-      <motion.div variants={cardVariants}>
-        <Image alt={"프로필 이미지"} src={profileImage} />
-      </motion.div>
-    </motion.div>
+    <CardComponent color="black">
+      <Image
+        className={css`
+          border-radius: 50%;
+          width: 200px;
+          height: 200px;
+        `}
+        alt={"프로필 이미지"}
+        src={profileImage}
+      />
+      <div
+        className={css`
+          font-size: 24px;
+        `}
+      >
+        만드는 것을 좋아하는 개발자 오현재입니다.
+      </div>
+    </CardComponent>
   );
 };
 

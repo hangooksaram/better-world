@@ -1,35 +1,34 @@
+"use client";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { RefObject, forwardRef } from "react";
+import { forwardRef } from "react";
+
+interface CardComponentProps {
+  backgroundColor?: string;
+  width?: string;
+  onClick?: () => void;
+}
 
 interface CardProps {
-  backgroundColor: string;
+  backgroundColor?: string;
   width?: string;
-  mouseEnterHandler: () => void;
-  mouseLeaveHandler: () => void;
-  clickHandler: () => void;
+  mouseEnterHandler?: () => void;
+  mouseLeaveHandler?: () => void;
+  clickHandler?: () => void;
   children: React.ReactNode;
 }
 
-const CardComponent = styled.div(
-  (props: { backgroundColor: string; width?: string }) => ({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "32px",
-    minHeight: "auto",
-    borderRadius: "54px",
-    fontSize: "48px",
-    border: "2px solid black",
-    cursor: "pointer",
-    margin: "8px",
-    backgroundColor: `${props.backgroundColor}`,
-    width: `${props.width ?? "100%"}`,
-    position: "relative",
-    overflow: "hidden",
-    color: "white",
-  })
-);
+const CardComponent = styled.div((props: CardComponentProps) => ({
+  backgroundColor: props.backgroundColor ?? "white",
+  width: props.width ?? "100%",
+  cursor: props.onClick ? "pointer" : "default",
+  padding: "32px",
+  minHeight: "auto",
+  borderRadius: "54px",
+  margin: "8px",
+  position: "relative",
+  overflow: "hidden",
+}));
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   (
@@ -47,8 +46,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       ref={ref}
       backgroundColor={backgroundColor}
       width={width}
-      onMouseEnter={() => mouseEnterHandler}
-      onMouseLeave={() => mouseLeaveHandler}
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaveHandler}
       onClick={clickHandler}
     >
       {children}
@@ -60,4 +59,4 @@ Card.displayName = "Card";
 
 const MotionCard = motion(Card);
 
-export { Card, MotionCard };
+export { Card, MotionCard, CardComponent };

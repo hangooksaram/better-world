@@ -1,6 +1,6 @@
 "use client";
 import AboutSection from "@/app/section/about/page";
-import ContactSection from "@/app/section/contact/page";
+import WorkSection from "@/app/section/work/page";
 import ProjectSection from "@/app/section/project/page";
 import SkillSection from "@/app/section/skill/page";
 import { SectionLayout } from "@/components/Ui/Template";
@@ -29,7 +29,7 @@ const SectionWrapper = ({ id, name, pageRefs }: ISectionProps) => (
       ) : name === "project" ? (
         <ProjectSection />
       ) : (
-        <ContactSection />
+        <WorkSection />
       )}
     </SectionLayout>
   </motion.div>

@@ -1,20 +1,29 @@
+"use client";
 import { css } from "@emotion/css";
 import { motion, useAnimate } from "framer-motion";
 import { useRef } from "react";
 
-const NavigationDetail = ({ width }: { width: string }) => {
-  const test = 1000;
+interface NavigationDetailProps {
+  width: string;
+  content: string;
+}
+
+const NavigationDetail = ({ width, content }: NavigationDetailProps) => {
   return (
     <motion.div
       className={css`
+        position: absolute;
         white-space: nowrap;
-        /* position: absolute; */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 48px;
+        font-weight: bold;
       `}
-      animate={{ x: [parseInt(width) + 500, -1000] }}
-      transition={{ repeat: Infinity, repeatDelay: 0.5, duration: 10 }}
+      animate={{ x: [parseInt(width) + 100, -(parseInt(width) + 800)] }}
+      transition={{ repeat: Infinity, duration: 7 }}
     >
-      this is detail. this is detail. this is detail. this is detail. this is
-      detail.
+      {content}
     </motion.div>
   );
 };

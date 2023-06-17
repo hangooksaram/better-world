@@ -1,9 +1,11 @@
+"use client";
 import { css } from "@emotion/css";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 import NavigationDetail from "./NavigationDetail";
 import { Scrollbar } from "smooth-scrollbar/scrollbar";
 import styled from "@emotion/styled";
+import { MotionCard } from "../Ui/Card";
 
 interface NavigationCardProps {
   id: number;
@@ -11,6 +13,7 @@ interface NavigationCardProps {
   backgroundColor: string;
   link: string;
   width?: string;
+  detail: string;
   handlePointClick: (id: number) => void;
 }
 
@@ -22,6 +25,7 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
   text,
   link,
   width,
+  detail,
   handlePointClick,
 }) => {
   const clickHandler = () => {
@@ -35,47 +39,32 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
   }, [el]);
 
   return (
-    <motion.div
+    <MotionCard
       ref={el}
-      className={css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 32px;
-        width: 100%;
-        min-height: auto;
-        border-radius: 54px;
-        font-size: 48px;
-        border: 2px solid black;
-        cursor: pointer;
-        margin: 8px;
-        background-color: ${backgroundColor};
-        width: ${width};
-        position: relative;
-        overflow: hidden;
-        color: white;
-      `}
+      backgroundColor={backgroundColor}
+      width="48%"
+      mouseEnterHandler={() => setIsMouseEntered(text)}
+      mouseLeaveHandler={() => setIsMouseEntered("")}
+      clickHandler={() => handlePointClick(id)}
       whileHover={{ scale: 0.95 }}
       transition={{
         duration: 0.2,
       }}
-      onMouseEnter={() => setIsMouseEntered(text)}
-      onMouseLeave={() => setIsMouseEntered("")}
-      onClick={clickHandler}
     >
       {isMouseEntered === text ? (
-        <NavigationDetail width={elementWidth} />
+        <NavigationDetail width={elementWidth} content={detail} />
       ) : (
         <motion.div
           className={css`
             font-weight: bold;
+            font-size: 24px;
           `}
           whileHover={{ opacity: 0 }}
         >
           {text}
         </motion.div>
       )}
-    </motion.div>
+    </MotionCard>
   );
 };
 
