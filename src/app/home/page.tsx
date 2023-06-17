@@ -30,7 +30,6 @@ const HomePage = ({
       },
       detail: "제가 사용할 수 있는 기술들을 확인해주세요.",
     },
-
     {
       id: 3,
       text: "Work",
