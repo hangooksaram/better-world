@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 
-const SkillSection = () => {
+const WorkSection = () => {
   return <div></div>;
 };
 
-export default SkillSection;
+export default WorkSection;
