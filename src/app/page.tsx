@@ -1,19 +1,21 @@
 "use client";
-import NavigationCard from "@/components/Card/Navigation";
+import NavigationCard from "@/components/Ui/Card/Navigation";
 import { css } from "@emotion/css";
 import Link from "next/link";
 import { Fragment, useEffect, useLayoutEffect, useState } from "react";
 import { renderToString } from "react-dom/server";
 
 import usePage from "../hooks/usePage";
-import HomePage from "./home/page";
+
 import Scrollbar from "smooth-scrollbar";
 import { SectionLayout } from "@/components/Ui/Template";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 import CustomMotion from "@/components/CustomMotion";
-import AboutSection from "./section/about/page";
+
 import SectionWrapper from "@/components/Wrapper/SectionWrapper";
+import AboutSection from "@/components/Section/About";
+import HomeSection from "@/components/Section/Home";
 
 // '/' 경로. root route.
 export default function Home() {
@@ -28,7 +30,7 @@ export default function Home() {
     // <Scrollbar damping={0.1} alwaysShowTracks={false}>
     <div id="wrapper" style={{ maxHeight: "100vh" }}>
       <header>
-        <HomePage handlePointClick={handlePointClick} />
+        <HomeSection handlePointClick={handlePointClick} />
       </header>
       <main>
         {pageObjArray.map(({ id, name }) => {

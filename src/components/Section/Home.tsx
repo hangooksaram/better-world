@@ -1,10 +1,10 @@
 "use client";
-import NavigationCard from "@/components/Card/Navigation";
+import NavigationCard from "@/components/Ui/Card/Navigation";
 import { SectionLayout } from "@/components/Ui/Template";
 import { css } from "@emotion/css";
 import React from "react";
 
-const HomePage = ({
+const HomeSection = ({
   handlePointClick,
 }: {
   handlePointClick: (id: number) => void;
@@ -105,4 +105,4 @@ const HomePage = ({
   );
 };
 
-export default HomePage;
+export default HomeSection;

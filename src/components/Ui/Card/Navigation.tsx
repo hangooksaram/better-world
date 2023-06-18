@@ -5,7 +5,7 @@ import { motion, useScroll } from "framer-motion";
 import NavigationDetail from "./NavigationDetail";
 import { Scrollbar } from "smooth-scrollbar/scrollbar";
 import styled from "@emotion/styled";
-import { MotionCard } from "../Ui/Card";
+import { MotionCard } from "./Card";
 
 interface NavigationCardProps {
   id: number;

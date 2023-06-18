@@ -2,9 +2,9 @@
 
 import { motion, Variants } from "framer-motion";
 import React from "react";
-import profileImage from "../../../../public/profile.jpeg";
+import profileImage from "../../../public/profile.jpeg";
 import Image from "next/image";
-import { CardComponent } from "@/components/Ui/Card";
+import { CardComponent } from "@/components/Ui/Card/Card";
 import { css } from "@emotion/css";
 
 const AboutSection = () => {

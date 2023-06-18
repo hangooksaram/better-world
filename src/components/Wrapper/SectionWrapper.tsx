@@ -1,11 +1,11 @@
 "use client";
-import AboutSection from "@/app/section/about/page";
-import WorkSection from "@/app/section/work/page";
-import ProjectSection from "@/app/section/project/page";
-import SkillSection from "@/app/section/skill/page";
 import { SectionLayout } from "@/components/Ui/Template";
 import { motion } from "framer-motion";
 import React from "react";
+import AboutSection from "../Section/About";
+import SkillSection from "../Section/Skill";
+import ProjectSection from "../Section/Project";
+import WorkSection from "../Section/Work";
 
 interface ISectionProps {
   id: number;
