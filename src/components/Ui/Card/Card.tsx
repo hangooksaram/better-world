@@ -3,9 +3,11 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
 
-interface CardComponentProps {
+interface StyledCardProps {
   backgroundColor?: string;
   width?: string;
+  height?: string;
+  borderRadius?: string;
   onClick?: () => void;
 }
 
@@ -18,14 +20,14 @@ interface CardProps {
   children: React.ReactNode;
 }
 
-const CardComponent = styled.div((props: CardComponentProps) => ({
+const StyledCard = styled.div((props: StyledCardProps) => ({
   backgroundColor: props.backgroundColor ?? "white",
   width: props.width ?? "100%",
+  height: props.height ?? "auto",
   cursor: props.onClick ? "pointer" : "default",
   padding: "32px",
   minHeight: "auto",
-  borderRadius: "54px",
-  margin: "8px",
+  borderRadius: props.borderRadius ?? "54px",
   position: "relative",
   overflow: "hidden",
 }));
@@ -42,7 +44,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     },
     ref
   ) => (
-    <CardComponent
+    <StyledCard
       ref={ref}
       backgroundColor={backgroundColor}
       width={width}
@@ -51,7 +53,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       onClick={clickHandler}
     >
       {children}
-    </CardComponent>
+    </StyledCard>
   )
 );
 
@@ -59,4 +61,4 @@ Card.displayName = "Card";
 
 const MotionCard = motion(Card);
 
-export { Card, MotionCard, CardComponent };
+export { Card, MotionCard, StyledCard };

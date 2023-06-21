@@ -1,26 +1,67 @@
 "use client";
 import styled from "@emotion/styled";
+import { SectionLayoutProps, FlexProps, TextProps, GridProps } from ".";
+
+const Grid = styled.div(
+  {
+    display: "grid",
+  },
+  ({
+    gridTemplateColumns,
+    gridTemplateRows,
+    rowGap,
+    columnGap,
+    width,
+    height,
+  }: GridProps) => ({
+    width: width ?? "100%",
+    height: height ?? "100%",
+    gridTemplateRows,
+    gridTemplateColumns,
+    rowGap: rowGap ?? "8px",
+    columnGap: columnGap ?? "8px",
+  })
+);
+
+const Flex = styled.div(
+  { display: "flex" },
+  ({
+    width,
+    height,
+    flexDirection,
+    justifyContent,
+    alignItems,
+    flexWrap,
+    rowGap,
+    columnGap,
+  }: FlexProps) => ({
+    width: width ?? "100%",
+    height: height ?? "100%",
+    flexDirection: flexDirection ?? "row",
+    justifyContent: justifyContent ?? "flex-start",
+    alignItems: alignItems ?? "flex-start",
+    flexWrap: flexWrap ?? "nowrap",
+    rowGap: rowGap ?? "8px",
+    columnGap: columnGap ?? "8px",
+  })
+);
+const FlexColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const FlexCenter = styled.div`
-  width: 100%;
-  height: auto;
-  padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-interface SectionLayoutProps {
-  height?: string;
-  display?: string;
-  flexDirection?: "row";
-  justifyContent?: "center" | "space-between";
-}
-
 const SectionLayout = styled.section(
   {
-    width: "100vw",
-    padding: "16px",
+    width: "98%",
+    margin: "0 auto",
+    marginBottom: "8px",
   },
   ({ height, display, flexDirection, justifyContent }: SectionLayoutProps) => ({
     height: height ?? "100vh",
@@ -29,23 +70,20 @@ const SectionLayout = styled.section(
     justifyContent: justifyContent ?? "initial",
   })
 );
-const NavigationStyledComponent = styled.div(
-  (props: { width: string; backgroundColor: string }) => ({
-    display: "flex",
-    justifyontent: "center",
-    alignItems: "center",
-    padding: "32px",
-    minHeight: "auto",
-    borderRadius: "54px",
-    fontSize: "48px",
-    border: "2px solid black",
-    cursor: "pointer",
-    margin: "8px",
-    backgroundColor: `${props.backgroundColor}`,
-    width: `${props.width || "100%"}px`,
-    position: "relative",
-    overflow: "hidden",
-    color: "white",
+export const textSize = {
+  xs: "24px",
+  sm: "32px",
+  md: "40px",
+  lg: "48px",
+  xl: "56px",
+};
+
+const Text = styled.div(
+  ({ size, underline, backgroundColor, color }: TextProps) => ({
+    fontSize: textSize[size],
+    textDecoration: underline ? "underline" : "none",
+    backgroundColor,
+    color,
   })
 );
-export { FlexCenter, SectionLayout, NavigationStyledComponent };
+export { Flex, FlexColumn, FlexCenter, SectionLayout, Text, Grid };
