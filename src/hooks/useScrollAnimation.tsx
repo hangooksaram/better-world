@@ -7,7 +7,6 @@ const useScrollAnimation = (target: RefObject<HTMLDivElement>) => {
   const scroll = useScroll({
     target: target,
   });
-  console.log(scroll);
 };
 
 export default useScrollAnimation;

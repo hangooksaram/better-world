@@ -10,8 +10,8 @@ export interface IPageObj {
 const pageObjArray = [
   { id: 1, name: "about" },
   { id: 2, name: "skill" },
-  { id: 3, name: "project" },
-  { id: 4, name: "contact" },
+  { id: 3, name: "work" },
+  { id: 4, name: "project" },
 ];
 const usePage = (scrollbar: Scrollbar | null) => {
   const [currentPageId, setCurrentPageId] = useState<number>(1);
