@@ -26,24 +26,24 @@ const NavigationDetail = ({
       animate={{
         opacity: 1,
         transition: {
-          duration: 0.3,
+          duration: 0.5,
         },
       }}
       exit={{
         opacity: 0,
         transition: {
-          duration: 0.1,
+          duration: 0.2,
         },
       }}
     >
       <motion.div
         className={css`
           position: absolute;
-          font-size: 60px;
+          font-size: 80px;
           font-weight: bold;
           z-index: 1;
           white-space: nowrap;
-          top: 50%;
+          top: 30%;
         `}
         animate={{
           x: [parseInt(width) + 100, -(parseInt(width) + 800)],

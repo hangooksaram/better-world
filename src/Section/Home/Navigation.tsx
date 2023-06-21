@@ -44,7 +44,7 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
   detail,
   handlePointClick,
 }) => {
-  const clickHandler = () => {
+  const onClick = () => {
     handlePointClick(id);
   };
   const el = useRef<HTMLDivElement>(null);
@@ -61,7 +61,17 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
       width={width}
       mouseEnterHandler={() => setIsMouseEntered(text)}
       mouseLeaveHandler={() => setIsMouseEntered("")}
-      clickHandler={() => handlePointClick(id)}
+      onClick={() => handlePointClick(id)}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{
+        type: "spring",
+        scale: 1,
+        opacity: 1,
+        transition: {
+          duration: 0.2,
+          delay: id / 10,
+        },
+      }}
       whileHover={{ scale: 0.95 }}
       transition={{
         duration: 0.2,

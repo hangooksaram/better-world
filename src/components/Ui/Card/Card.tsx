@@ -16,7 +16,7 @@ interface CardProps {
   width?: string;
   mouseEnterHandler?: () => void;
   mouseLeaveHandler?: () => void;
-  clickHandler?: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 
@@ -39,7 +39,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       width,
       mouseEnterHandler,
       mouseLeaveHandler,
-      clickHandler,
+      onClick,
       children,
     },
     ref
@@ -50,7 +50,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       width={width}
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
-      onClick={clickHandler}
+      onClick={onClick}
     >
       {children}
     </StyledCard>
