@@ -16,19 +16,22 @@ const PROJECTS: DetailInfo[] = [
     index: 0,
     title: "Better World",
     skills: [{ name: "React", proficiency: "veryHigh" }],
-    descriptions: ["저만의 포트폴리오를 만들고 있습니다.", ""],
+    descriptions: ["저만의 포트폴리오를 가지기 위해 개발 중입니다.", "T"],
+    link: "",
   },
   {
     index: 1,
     title: "Tom RPG",
     skills: [{ name: "React", proficiency: "veryHigh" }],
     descriptions: [],
+    link: "",
   },
   {
     index: 2,
     title: "sound-fountain",
     skills: [{ name: "React", proficiency: "veryHigh" }],
     descriptions: [],
+    link: "",
   },
 ];
 
@@ -37,6 +40,7 @@ export interface DetailInfo {
   title: string;
   skills: Skill[];
   descriptions: string[];
+  link: string;
 }
 
 const ProjectSection = () => {

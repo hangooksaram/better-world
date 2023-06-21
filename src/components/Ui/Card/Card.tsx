@@ -30,6 +30,9 @@ const StyledCard = styled.div((props: StyledCardProps) => ({
   borderRadius: props.borderRadius ?? "54px",
   position: "relative",
   overflow: "hidden",
+  "@media (max-width:1000px)": {
+    width: "100%",
+  },
 }));
 
 const Card = forwardRef<HTMLDivElement, CardProps>(

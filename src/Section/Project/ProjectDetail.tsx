@@ -2,10 +2,12 @@ import { StyledCard } from "@/components/Ui/Card/Card";
 import { Flex, Text } from "@/components/Ui/Template";
 import { motion } from "framer-motion";
 import Close from "../../assets/icon/close.svg";
+import Done from "../../assets/icon/Done.svg";
 import { createPortal } from "react-dom";
 import { DetailInfo } from "./Project";
 import Tag from "@/components/Ui/Tag";
 import Image from "next/image";
+import Link from "@/components/Ui/Link";
 const ProjectDetail = ({
   setIsOpened,
   info,
@@ -26,11 +28,15 @@ const ProjectDetail = ({
             alignItems="flex-end"
             columnGap="24px"
           >
-            <Text underline size="lg">
-              <a href="https://event-us.kr/">{info?.title}</a>
-            </Text>
+            {info?.link ? (
+              <Link size="md" href={info!.link}>
+                {info?.title}
+              </Link>
+            ) : (
+              <Text size="md">{info?.title}</Text>
+            )}
 
-            <Image
+            <Close
               onClick={() => setIsOpened(false)}
               alt="close-icon"
               src={Close}
@@ -48,9 +54,10 @@ const ProjectDetail = ({
 
           <Flex flexDirection="column" rowGap="24px">
             {info?.descriptions.map((desc) => (
-              <Text size="xs" key={desc}>
-                {desc}
-              </Text>
+              <Flex alignItems="center" key={desc}>
+                <Done width={30} height={30} alt="done-icon" src={Done} />
+                <Text size="xs">{desc}</Text>
+              </Flex>
             ))}
           </Flex>
         </Flex>

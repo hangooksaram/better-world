@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import React, { Children, useState } from "react";
-import ExpandIcon from "../../assets/icon/ExpandIcon.svg";
 import Image from "next/image";
 import { Flex } from "./Template";
 import Done from "../../assets/icon/Done.svg";

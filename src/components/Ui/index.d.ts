@@ -30,6 +30,7 @@ interface TextProps {
   underline?: boolean;
   backgroundColor?: string;
   color?: string;
+  align?: "center" | "left" | "right";
 }
 
 export { SectionLayoutProps, FlexProps, TextProps, GridProps };

@@ -20,6 +20,10 @@ const Grid = styled.div(
     gridTemplateColumns,
     rowGap: rowGap ?? "8px",
     columnGap: columnGap ?? "8px",
+    "@media (max-width:1000px)": {
+      display: "flex",
+      flexDirection: "column",
+    },
   })
 );
 
@@ -43,6 +47,10 @@ const Flex = styled.div(
     flexWrap: flexWrap ?? "nowrap",
     rowGap: rowGap ?? "8px",
     columnGap: columnGap ?? "8px",
+    "@media (max-width: 1000px)": {
+      flexDirection: "column",
+      width: "100%",
+    },
   })
 );
 const FlexColumn = styled.div`
@@ -68,6 +76,9 @@ const SectionLayout = styled.section(
     display: display ?? "",
     flexDirection: flexDirection ?? "column",
     justifyContent: justifyContent ?? "initial",
+    "@media (max-width:1000px)": {
+      height: "auto",
+    },
   })
 );
 export const textSize = {
@@ -79,11 +90,12 @@ export const textSize = {
 };
 
 const Text = styled.div(
-  ({ size, underline, backgroundColor, color }: TextProps) => ({
+  ({ size, underline, backgroundColor, color, align }: TextProps) => ({
     fontSize: textSize[size],
     textDecoration: underline ? "underline" : "none",
     backgroundColor,
     color,
+    textAlign: align ?? "left",
   })
 );
 export { Flex, FlexColumn, FlexCenter, SectionLayout, Text, Grid };
