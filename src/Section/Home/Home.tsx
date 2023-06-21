@@ -1,6 +1,6 @@
 "use client";
 import NavigationCard from "@/Section/Home/Navigation";
-import { Grid, SectionLayout } from "@/components/Ui/Template";
+import { Grid, SectionLayout, Text } from "@/components/Ui/Template";
 import { css } from "@emotion/css";
 import React from "react";
 
@@ -18,7 +18,7 @@ const HomeSection = ({
       onClick: (id: number) => {
         handlePointClick(id);
       },
-      detail: "안녕하세요 ! 개발로 더 나은 세상을 만들고 싶은 오현재 입니다.",
+      detail: "안녕하세요 ! 만드는 것이 즐거운 오현재 입니다.",
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ const HomeSection = ({
       onClick: (id: number) => {
         handlePointClick(id);
       },
-      detail: "제가 사용할 수 있는 기술들을 확인해주세요.",
+      detail: "제가 사용할 수 있는 기술들을 간략히 확인해보세요 !",
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const HomeSection = ({
       onClick: (id: number) => {
         handlePointClick(id);
       },
-      detail: "저랑 연락해요~",
+      detail: "제가 어떻게 일했는 지 확인해보세요 !",
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ const HomeSection = ({
       onClick: (id: number) => {
         handlePointClick(id);
       },
-      detail: "저의 프로젝트들을 확인해보세요",
+      detail: "제가 진행했던 프로젝트들을 화인해보세요!",
     },
   ];
   return (
@@ -62,7 +62,22 @@ const HomeSection = ({
           color: white;
         `}
       >
-        <h1>
+        <Text
+          className={css`
+            display: none;
+            @media (max-width: 1000px) {
+              display: block;
+            }
+          `}
+          size="xs2"
+        >
+          현재 반응형 적용이 진행중인 웹 사이트 입니다. 조금만 기다려주세요!
+        </Text>
+        <h1
+          className={css`
+            word-break: keep-all;
+          `}
+        >
           <span
             className={css`
               background-color: white;

@@ -49,14 +49,9 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
   };
   const el = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState<string>("");
-  const [elementWidth, setElementWidth] = useState("");
-  useEffect(() => {
-    setElementWidth(el!.current!.clientWidth.toString());
-  }, [el]);
 
   return (
     <MotionCard
-      ref={el}
       backgroundColor={backgroundColor}
       width={width}
       mouseEnterHandler={() => setIsMouseEntered(text)}
@@ -96,11 +91,7 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
 
       <AnimatePresence>
         {isMouseEntered.includes(text) && (
-          <NavigationDetail
-            isMouseEntered={isMouseEntered}
-            width={elementWidth}
-            content={detail}
-          />
+          <NavigationDetail isMouseEntered={isMouseEntered} content={detail} />
         )}
       </AnimatePresence>
     </MotionCard>

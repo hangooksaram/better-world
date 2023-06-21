@@ -26,9 +26,9 @@ const Tag = ({
   proficiency: "low" | "medium" | "high" | "veryHigh";
 }) => {
   const color = {
-    low: "rgba(199, 226, 252, 0.25)",
-    medium: "rgba(158, 207, 255, 0.5)",
-    high: "rgba(158, 207, 255, 0.75)",
+    low: "rgba(255, 242, 128,0.5)",
+    medium: "rgba(255, 242, 128,1)",
+    high: "rgba(158, 207, 255, 0.5)",
     veryHigh: "rgba(158, 207, 255, 1)",
   };
   return <StyledTag color={color[proficiency]}>{name}</StyledTag>;

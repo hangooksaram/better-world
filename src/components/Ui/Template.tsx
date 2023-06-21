@@ -82,20 +82,32 @@ const SectionLayout = styled.section(
   })
 );
 export const textSize = {
+  xs3: "8px",
+  xs2: "16px",
   xs: "24px",
   sm: "32px",
   md: "40px",
   lg: "48px",
   xl: "56px",
+  xl2: "72px",
+  xl3: "80px",
 };
 
 const Text = styled.div(
-  ({ size, underline, backgroundColor, color, align }: TextProps) => ({
+  ({
+    size,
+    underline,
+    backgroundColor,
+    color,
+    align,
+    marginBottom,
+  }: TextProps) => ({
     fontSize: textSize[size],
     textDecoration: underline ? "underline" : "none",
     backgroundColor,
     color,
     textAlign: align ?? "left",
+    marginBottom,
   })
 );
 export { Flex, FlexColumn, FlexCenter, SectionLayout, Text, Grid };

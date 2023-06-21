@@ -29,7 +29,7 @@ const AboutSection = () => {
   return (
     <Flex>
       <Flex flexDirection="column" width="40%">
-        <StyledCard color="black" height="60%">
+        <StyledCard backgroundColor="var(--primary-color)" height="60%">
           <Flex
             flexDirection="column"
             justifyContent="center"
@@ -61,8 +61,8 @@ const AboutSection = () => {
           <Flex flexDirection="column" rowGap="24px" justifyContent="center">
             <div>
               <Text size="xs">깃허브</Text>
-              <Link size="xs" href="https://hangooksaram.github.com">
-                hangooksaram.github.com
+              <Link size="xs" href="https://github.com/hangooksaram">
+                github.com/hangooksaram
               </Link>
             </div>
             <div>
@@ -79,24 +79,50 @@ const AboutSection = () => {
         </StyledCard>
       </Flex>
       <Flex width="60%" flexDirection="column">
-        <StyledCard>
-          <Flex flexDirection="column" rowGap="50px">
+        <StyledCard height="65%">
+          <Flex flexDirection="column" justifyContent="space-between">
             <Text size="sm">
-              <Done width={32} height={32} /> 제가 좋아하는 무언가를 만드는 것이
-              즐거워 개발자 를 시작하게 되었습니다.
+              <Done width={32} height={32} /> 단순히 무언가를 만드는 것이 즐거워
+              개발자 를 시작하게 되었습니다.
             </Text>
             <Text size="sm">
               <Done width={32} height={32} />
-              시간이 흘러가며 다른 사람이 좋아할 만 한것, 다른사람의 입장에서
-              서비스를 생각해보는 것이 즐거워져 개발자를 계속하고 있습니다.
+              프로젝트와 커리어를 이어나가며 다른 사람이 좋아할 만 한 것을
+              만드는 것이 즐거워져 개발자를 계속하고 있습니다.
             </Text>
             <Text size="sm">
               <Done width={32} height={32} />
-              Clean Code 와 코드의 재사용에 관심이 많습니다.
+              개발 은 현실의 문제를 해결하고, 더 나은 세상을 만드는 데 가장 좋은
+              도구라고 생각합니다.
+            </Text>
+            <Text size="sm">
+              <Done width={32} height={32} />
+              코드 를 컴포넌트화 하고 재사용 하는 것에 관심이 많습니다.
             </Text>
           </Flex>
         </StyledCard>
-        <StyledCard></StyledCard>
+        <StyledCard height="35%" backgroundColor="rgb(214, 248, 255)">
+          <Flex flexDirection="column" justifyContent="space-between">
+            <div>
+              <Text size="xs">2014.03 - 2021.09</Text>
+              <Flex height="auto" alignItems="center">
+                <Text size="xs">가톨릭대학교 컴퓨터정보공학부 졸업</Text>
+                <Text size="xs">학점 3.24 / 4.5</Text>
+              </Flex>
+            </div>
+            <div>
+              <Text size="xs">2019.08</Text>
+              <Text size="xs">정보처리기사 자격증</Text>
+            </div>
+            <div>
+              <Text size="xs">2020.08</Text>
+              <Text size="xs">
+                교내 캡스톤 창업경진대회 우수상 수상 및 SW 스타트업 챌린지 본선
+                진출
+              </Text>
+            </div>
+          </Flex>
+        </StyledCard>
       </Flex>
     </Flex>
   );

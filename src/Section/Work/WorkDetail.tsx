@@ -53,7 +53,6 @@ const WorkDetail = ({ title, details }: WorkArchiveProps) => {
               </Link>
             ) : (
               <Text key={`work-detail-${index}`} size="xs">
-                {index}
                 {text}
               </Text>
             );

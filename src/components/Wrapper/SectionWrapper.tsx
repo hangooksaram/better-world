@@ -15,7 +15,10 @@ interface ISectionProps {
 }
 
 const SectionWrapper = ({ id, name, pageRefs, children }: ISectionProps) => {
-  const SECTION_HEIGHT = name === "work" ? "auto" : undefined;
+  const SECTION_HEIGHT =
+    name === "work" || name === "skill" || name === "project"
+      ? "auto"
+      : undefined;
   return (
     <motion.div
       initial={{ opacity: 0 }}

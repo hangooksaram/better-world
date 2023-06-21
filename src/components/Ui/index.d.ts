@@ -26,11 +26,12 @@ interface GridProps {
 }
 
 interface TextProps {
-  size: "xs" | "sm" | "md" | "lg" | "xl";
+  size: "xs3" | "xs2" | "xs" | "sm" | "md" | "lg" | "xl" | "xl2" | "xl3";
   underline?: boolean;
   backgroundColor?: string;
   color?: string;
   align?: "center" | "left" | "right";
+  marginBottom?: string;
 }
 
 export { SectionLayoutProps, FlexProps, TextProps, GridProps };

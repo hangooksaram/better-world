@@ -6,7 +6,8 @@ import React from "react";
 import { Skill } from "../Skill/skillData";
 import WorkDetail from "./WorkDetail";
 import Done from "../../assets/icon/Done.svg";
-import Image from "next/image";
+import { css } from "@emotion/css";
+import Link from "@/components/Ui/Link";
 // #E3DEF7
 // #5C3FBF
 
@@ -25,7 +26,7 @@ const WORK_SKILLS: Skill[] = [
   },
   {
     name: "Vue 3",
-    proficiency: "high",
+    proficiency: "veryHigh",
   },
   {
     name: "ASP .NET",
@@ -62,7 +63,7 @@ const WORK_ARCHIVES = [
       { text: "Notion 을 이용해 API 명세서 문서화" },
       { text: "CRUD 기능, 문의 및 답변시 이메일 전송 기능 구현" },
       {
-        text: "상세 정보 화인",
+        text: "상세 정보 확인",
         link: "https://www.notion.so/DOCS-81874c3efc4d4447a50d7cd4eb60eb70",
       },
     ],
@@ -94,9 +95,9 @@ const WorkSection = () => {
       <StyledCard backgroundColor="#1B1B1F">
         <Flex flexDirection="column" rowGap="48px">
           <Flex alignItems="flex-end" columnGap="24px">
-            <Text color="white" underline size="lg">
-              <a href="https://event-us.kr/">이벤터스</a>
-            </Text>
+            <Link color="white" size="lg" href="https://event-us.kr/">
+              이벤터스
+            </Link>
 
             <Text color="white" size="xs">
               2020.04 - 2021.12 (약 1년 9개월)
@@ -124,7 +125,15 @@ const WorkSection = () => {
           </Flex>
         </Flex>
       </StyledCard>
-      <Flex flexDirection="column">
+      <Flex
+        className={css`
+          @media (max-width: 1000px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+        `}
+        flexDirection="column"
+      >
         {WORK_ARCHIVES.map(({ title, details }, index) => (
           <WorkDetail
             key={`work-archives-${index}`}

@@ -1,20 +1,24 @@
 "use client";
 import { css } from "@emotion/css";
 import { motion, useAnimate } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fadeAnimation } from "./Navigation";
 
 interface NavigationDetailProps {
-  width: string;
   content: string;
   isMouseEntered: string;
 }
 
 const NavigationDetail = ({
-  width,
   content,
   isMouseEntered,
 }: NavigationDetailProps) => {
+  const el = useRef<HTMLDivElement>(null);
+  const [elementWidth, setElementWidth] = useState("");
+  useEffect(() => {
+    setElementWidth(el!.current!.clientWidth.toString());
+    console.log(el!.current!.clientWidth.toString());
+  }, [el]);
   return (
     <motion.div
       className={css`
@@ -37,6 +41,7 @@ const NavigationDetail = ({
       }}
     >
       <motion.div
+        ref={el}
         className={css`
           position: absolute;
           font-size: 80px;
@@ -46,9 +51,9 @@ const NavigationDetail = ({
           top: 30%;
         `}
         animate={{
-          x: [parseInt(width) + 100, -(parseInt(width) + 800)],
+          x: [120, -parseInt(elementWidth)],
         }}
-        transition={{ duration: 10 }}
+        transition={{ repeat: Infinity, duration: 6 }}
       >
         {content}
       </motion.div>

@@ -3,11 +3,11 @@ import { Flex, Text } from "@/components/Ui/Template";
 import { motion } from "framer-motion";
 import Close from "../../assets/icon/close.svg";
 import Done from "../../assets/icon/Done.svg";
-import { createPortal } from "react-dom";
 import { DetailInfo } from "./Project";
 import Tag from "@/components/Ui/Tag";
-import Image from "next/image";
 import Link from "@/components/Ui/Link";
+import React from "react";
+import { css } from "@emotion/css";
 const ProjectDetail = ({
   setIsOpened,
   info,
@@ -22,7 +22,7 @@ const ProjectDetail = ({
       transition={{ duration: 0.4, delay: 0.5 }}
     >
       <StyledCard backgroundColor="white">
-        <Flex flexDirection="column" rowGap="48px">
+        <Flex flexDirection="column" rowGap="24px">
           <Flex
             justifyContent="space-between"
             alignItems="flex-end"
@@ -42,7 +42,21 @@ const ProjectDetail = ({
               src={Close}
             />
           </Flex>
-          <Flex>
+          <div>
+            <Text color="gray" size="xs2" marginBottom="8px">
+              소개
+            </Text>
+            <Text size="xs">{info?.summary}</Text>
+          </div>
+
+          <Flex
+            className={css`
+              @media (max-width: 1000px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+              }
+            `}
+          >
             {info?.skills.map((skill) => (
               <Tag
                 key={skill.name}
@@ -51,15 +65,27 @@ const ProjectDetail = ({
               />
             ))}
           </Flex>
-
-          <Flex flexDirection="column" rowGap="24px">
-            {info?.descriptions.map((desc) => (
-              <Flex alignItems="center" key={desc}>
-                <Done width={30} height={30} alt="done-icon" src={Done} />
-                <Text size="xs">{desc}</Text>
-              </Flex>
-            ))}
-          </Flex>
+          <div>
+            <Text color="gray" marginBottom="8px" size="xs2">
+              상세
+            </Text>
+            <Flex flexDirection="column" rowGap="24px">
+              {info?.descriptions.map((desc) => (
+                <Flex
+                  className={css`
+                    @media (max-width: 1000px) {
+                      flex-direction: row;
+                    }
+                  `}
+                  alignItems="center"
+                  key={desc}
+                >
+                  <Done width={30} height={30} alt="done-icon" src={Done} />
+                  <Text size="xs">{desc}</Text>
+                </Flex>
+              ))}
+            </Flex>
+          </div>
         </Flex>
       </StyledCard>
     </motion.div>

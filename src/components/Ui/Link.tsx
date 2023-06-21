@@ -28,8 +28,9 @@ const StyledAnchor = styled.a(
     },
     textDecoration: "underline",
   },
-  ({ size }: { size?: string }) => ({
+  ({ size, color }: { size?: string; color?: string }) => ({
     fontSize: size,
+    color,
   })
 );
 
@@ -37,13 +38,20 @@ const Link = ({
   href,
   size,
   children,
+  color,
 }: {
   href: string;
   children: React.ReactNode;
   size: "xs" | "sm" | "md" | "lg" | "xl";
+  color?: string;
 }) => {
   return (
-    <StyledAnchor target="_blank" size={textSize[size]} href={href}>
+    <StyledAnchor
+      target="_blank"
+      size={textSize[size]}
+      href={href}
+      color={color}
+    >
       {children}
     </StyledAnchor>
   );
