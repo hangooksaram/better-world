@@ -1,21 +1,13 @@
 "use client";
-import NavigationCard from "@/components/Ui/Card/Navigation";
-import { css } from "@emotion/css";
-import Link from "next/link";
-import { Fragment, useEffect, useLayoutEffect, useState } from "react";
-import { renderToString } from "react-dom/server";
-
+import { useEffect, useState } from "react";
 import usePage from "../hooks/usePage";
-
 import Scrollbar from "smooth-scrollbar";
-import { SectionLayout } from "@/components/Ui/Template";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
-import { motion } from "framer-motion";
-import CustomMotion from "@/components/CustomMotion";
-
+import AboutSection from "@/Section/About/About";
+import HomeSection from "@/Section/Home/Home";
+import SkillSection from "@/Section/Skill/Skill";
+import WorkSection from "@/Section/Work/Work";
+import ProjectSection from "@/Section/Project/Project";
 import SectionWrapper from "@/components/Wrapper/SectionWrapper";
-import AboutSection from "@/components/Section/About";
-import HomeSection from "@/components/Section/Home";
 
 // '/' 경로. root route.
 export default function Home() {
@@ -33,7 +25,7 @@ export default function Home() {
         <HomeSection handlePointClick={handlePointClick} />
       </header>
       <main>
-        {pageObjArray.map(({ id, name }) => {
+        {/* {pageObjArray.map(({ id, name }) => {
           return (
             <SectionWrapper
               key={`page-${id}`}
@@ -42,7 +34,19 @@ export default function Home() {
               pageRefs={pageRefs}
             />
           );
-        })}
+        })} */}
+        <SectionWrapper key="page-1" id={1} name="about" pageRefs={pageRefs}>
+          <AboutSection />
+        </SectionWrapper>
+        <SectionWrapper key="page-2" id={2} name="skill" pageRefs={pageRefs}>
+          <SkillSection />
+        </SectionWrapper>
+        <SectionWrapper key="page-3" id={3} name="work" pageRefs={pageRefs}>
+          <WorkSection />
+        </SectionWrapper>
+        <SectionWrapper key="page-4" id={4} name="project" pageRefs={pageRefs}>
+          <ProjectSection />
+        </SectionWrapper>
       </main>
     </div>
     // </Scrollbar>
@@ -56,7 +60,7 @@ export default function Home() {
 //         pageRefs.current[id] = element!;
 //       }}
 //     >
-//       <SectionLayout id={`page-${id}`} key={`layout-${id}`}></SectionLayout>
+//       <SectionWrapper id={`page-${id}`} key={`layout-${id}`}></SectionWrapper>
 //     </React.Fragment>
 //   )
 // );

@@ -10,9 +10,16 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: black;
+  line-height: 1.2;
+
+  --primary-color: rgb(158, 207, 255);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  border: none;
 }
