@@ -14,7 +14,7 @@ const WorkDetail = ({ title, details }: WorkArchiveProps) => {
           border-radius: 54px;
           height: 240px;
           background-color: #a4a1fe;
-          width: 50%;
+          width: 30%;
           font-weight: 700;
         `}
         whileInView={{ x: ["50%", "0%"] }}
@@ -54,31 +54,4 @@ const WorkDetail = ({ title, details }: WorkArchiveProps) => {
     </Flex>
   );
 };
-
-{
-  /* <Flex flexDirection="column" rowGap="16px">
-<Expand title="사내 UI 컴포넌트 개발 및 개선">
-  <Text size="md">
-    Vue 를 이용한 Button, Pagination, Tooltip 등 사내 UI 컴포넌트 개발
-  </Text>
-  <Text size="md">Storybook 을 이용한 UI 컴포넌트 템플릿 작성</Text>
-  <Text size="md">UI 업데이트 로그 작성</Text>
-  <Text size="md">Storybook 구조 변경</Text>
-</Expand>
-<Expand title="문의하기 기능 풀스택 개발">
-  <Text size="md">ASP .NET CORE, EF Framework 를 이용한 DB 설계</Text>
-  <Text size="md">
-    <Link
-      size="xs"
-      href="https://www.notion.so/DOCS-81874c3efc4d4447a50d7cd4eb60eb70"
-    >
-      더 많은 정보 확인
-    </Link>
-  </Text>
-</Expand>
-<Expand title="실시간 Hub 를 사용한 행사 솔루션 기능 개발">
-  <Text size="md">뭐시기</Text>
-</Expand>
-</Flex> */
-}
 export default WorkDetail;

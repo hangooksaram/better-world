@@ -44,9 +44,9 @@ export interface WorkDetailsProps {
 
 const WORK_ARCHIVES = [
   {
-    title: "사내 UI 컴포넌트 개발 및 개선",
+    title: "UI 컴포넌트 개발 및 개선",
     details: [
-      { text: "Vue, tailwind 를 이용한 UI 컴포넌트 개발" },
+      { text: "Vue, tailwind 를 이용한 사내 전용 UI 컴포넌트 개발" },
       {
         text: "Storybook 의 스토리 및 Notion 업데이트 로그 작성을 통한 UI 문서화 작업",
       },
@@ -54,12 +54,26 @@ const WORK_ARCHIVES = [
     ],
   },
   {
-    title: "문의하기 기능 풀스택 개발",
+    title: "문의하기 기능 개발",
     details: [
-      { text: "ASP .NET CORE, EF Framework 를 이용한 DB 설계" },
+      { text: "DB 설계, 구현" },
+      { text: "ASP .NET MVC 패턴에서 Controller-based API 구현" },
+      { text: "Notion 을 이용해 API 명세서 문서화" },
+      { text: "CRUD 기능, 문의 및 답변시 이메일 전송 기능 구현" },
       {
-        text: "더 많은 정보확인",
+        text: "상세 정보 화인",
         link: "https://www.notion.so/DOCS-81874c3efc4d4447a50d7cd4eb60eb70",
+      },
+    ],
+  },
+  {
+    title: "행사 솔루션 기능 개발",
+    details: [
+      {
+        text: "모의투자, 투표 등 실시간으로 행사 주최자와 참가자가 소통 해야 하는 기능 개발 (SignalR Hub 이용)",
+      },
+      {
+        text: "기능 관련 데이터를 실시간으로 그래프 및 차트 로 Visualizing",
       },
     ],
   },
