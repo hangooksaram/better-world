@@ -1,13 +1,12 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { Variants } from "framer-motion";
 import React from "react";
 import profileImage from "../../../public/profile.jpeg";
 import Image from "next/image";
 import { StyledCard } from "@/components/Ui/Card/Card";
 import { css } from "@emotion/css";
-import styled from "@emotion/styled";
-import { Flex, FlexColumn, Text } from "../../components/Ui/Template";
+import { Flex, Text } from "../../components/Ui/Template";
 import Link from "@/components/Ui/Link";
 import Done from "../../assets/icon/Done.svg";
 

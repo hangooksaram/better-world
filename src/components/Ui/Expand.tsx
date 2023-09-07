@@ -6,7 +6,6 @@ import Done from "../../assets/icon/Done.svg";
 import { motion } from "framer-motion";
 import { css } from "@emotion/css";
 import { AnimatePresence } from "framer-motion";
-const ExpandConatiner = styled.div``;
 
 const ExpandTitle = ({
   onClick,
@@ -43,13 +42,11 @@ const ExpandTitle = ({
 };
 
 const ExpandContent = ({
-  isOpened,
   children,
 }: {
   isOpened: boolean;
   children: React.ReactNode;
 }) => {
-  const length = Children.count(children);
   return (
     <motion.div
       className={css`

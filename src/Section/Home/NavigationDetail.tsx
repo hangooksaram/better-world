@@ -1,23 +1,18 @@
 "use client";
 import { css } from "@emotion/css";
-import { motion, useAnimate } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { fadeAnimation } from "./Navigation";
 
 interface NavigationDetailProps {
   content: string;
   isMouseEntered: string;
 }
 
-const NavigationDetail = ({
-  content,
-  isMouseEntered,
-}: NavigationDetailProps) => {
+const NavigationDetail = ({ content }: NavigationDetailProps) => {
   const el = useRef<HTMLDivElement>(null);
   const [elementWidth, setElementWidth] = useState("");
   useEffect(() => {
     setElementWidth(el!.current!.clientWidth.toString());
-    console.log(el!.current!.clientWidth.toString());
   }, [el]);
   return (
     <motion.div

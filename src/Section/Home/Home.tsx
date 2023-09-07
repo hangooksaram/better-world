@@ -5,9 +5,9 @@ import { css } from "@emotion/css";
 import React from "react";
 
 const HomeSection = ({
-  handlePointClick,
+  scrollToPage,
 }: {
-  handlePointClick: (id: number) => void;
+  scrollToPage: (id: number) => void;
 }) => {
   const NavigationList = [
     {
@@ -16,7 +16,7 @@ const HomeSection = ({
       backgroundColor: "var(--primary-color)",
       link: "about",
       onClick: (id: number) => {
-        handlePointClick(id);
+        scrollToPage(id);
       },
       detail: "안녕하세요 ! 만드는 것이 즐거운 오현재 입니다.",
     },
@@ -26,7 +26,7 @@ const HomeSection = ({
       backgroundColor: "white",
       link: "skill",
       onClick: (id: number) => {
-        handlePointClick(id);
+        scrollToPage(id);
       },
       detail: "제가 사용할 수 있는 기술들을 간략히 확인해보세요 !",
     },
@@ -36,7 +36,7 @@ const HomeSection = ({
       backgroundColor: "rgb(201, 201, 201)",
       link: "work",
       onClick: (id: number) => {
-        handlePointClick(id);
+        scrollToPage(id);
       },
       detail: "제가 어떻게 일했는 지 확인해보세요 !",
     },
@@ -46,7 +46,7 @@ const HomeSection = ({
       backgroundColor: "rgb(255, 209, 209)",
       link: "project",
       onClick: (id: number) => {
-        handlePointClick(id);
+        scrollToPage(id);
       },
       detail: "제가 진행했던 프로젝트들을 화인해보세요!",
     },
@@ -109,7 +109,7 @@ const HomeSection = ({
                 text={text}
                 backgroundColor={backgroundColor}
                 link={link}
-                handlePointClick={() => onClick(id)}
+                scrollToPage={() => onClick(id)}
                 detail={detail}
               />
             );

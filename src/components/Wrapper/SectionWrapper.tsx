@@ -1,11 +1,7 @@
 "use client";
 import { SectionLayout } from "@/components/Ui/Template";
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
-import AboutSection from "../../Section/About/About";
-import SkillSection from "../../Section/Skill/Skill";
-import ProjectSection from "../../Section/Project/Project";
-import WorkSection from "../../Section/Work/Work";
+import React from "react";
 
 interface ISectionProps {
   id: number;
@@ -28,18 +24,6 @@ const SectionWrapper = ({ id, name, pageRefs, children }: ISectionProps) => {
         pageRefs.current[id] = element!;
       }}
     >
-      {/* <SectionLayout>
-      {name === "about" ? (
-        <AboutSection />
-      ) : name === "skill" ? (
-        <SkillSection />
-      ) : name === "project" ? (
-        <ProjectSection />
-      ) : (
-        <WorkSection />
-      )}
-    </SectionLayout> */}
-
       <SectionLayout height={SECTION_HEIGHT}>{children}</SectionLayout>
     </motion.div>
   );

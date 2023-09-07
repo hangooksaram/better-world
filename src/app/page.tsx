@@ -17,24 +17,13 @@ export default function Home() {
     setScrollbar(sc);
   }, []);
 
-  const { pageObjArray, pageRefs, handlePointClick } = usePage(scrollbar);
+  const { pageObjArray, pageRefs, scrollToPage } = usePage(scrollbar);
   return (
-    // <Scrollbar damping={0.1} alwaysShowTracks={false}>
     <div id="wrapper" style={{ maxHeight: "100vh" }}>
       <header>
-        <HomeSection handlePointClick={handlePointClick} />
+        <HomeSection scrollToPage={scrollToPage} />
       </header>
       <main>
-        {/* {pageObjArray.map(({ id, name }) => {
-          return (
-            <SectionWrapper
-              key={`page-${id}`}
-              id={id}
-              name={name}
-              pageRefs={pageRefs}
-            />
-          );
-        })} */}
         <SectionWrapper key="page-1" id={1} name="about" pageRefs={pageRefs}>
           <AboutSection />
         </SectionWrapper>
@@ -49,20 +38,5 @@ export default function Home() {
         </SectionWrapper>
       </main>
     </div>
-    // </Scrollbar>
   );
 }
-
-// const PageSection = forwardRef<HTMLElement, ISectionProps>(
-//   ({ id, name, pageRefs }, ref) => (
-//     <React.Fragment
-//       ref={(element) => {
-//         pageRefs.current[id] = element!;
-//       }}
-//     >
-//       <SectionWrapper id={`page-${id}`} key={`layout-${id}`}></SectionWrapper>
-//     </React.Fragment>
-//   )
-// );
-
-// PageSection.displayName = "PageSection";

@@ -1,7 +1,6 @@
 import { Flex, Text } from "@/components/Ui/Template";
 import { css } from "@emotion/css";
 import { motion } from "framer-motion";
-
 import { WorkArchiveProps } from "./Work";
 import Link from "@/components/Ui/Link";
 

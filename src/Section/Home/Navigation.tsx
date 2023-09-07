@@ -1,10 +1,8 @@
 "use client";
 import { css } from "@emotion/css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import NavigationDetail from "./NavigationDetail";
-import { Scrollbar } from "smooth-scrollbar/scrollbar";
-import styled from "@emotion/styled";
 import { MotionCard } from "../../components/Ui/Card/Card";
 import { AnimatePresence } from "framer-motion";
 interface NavigationCardProps {
@@ -14,7 +12,7 @@ interface NavigationCardProps {
   link: string;
   width?: string;
   detail: string;
-  handlePointClick: (id: number) => void;
+  scrollToPage: (id: number) => void;
 }
 
 export const fadeAnimation = {
@@ -39,15 +37,10 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
   id,
   backgroundColor,
   text,
-  link,
   width,
   detail,
-  handlePointClick,
+  scrollToPage,
 }) => {
-  const onClick = () => {
-    handlePointClick(id);
-  };
-  const el = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState<string>("");
 
   return (
@@ -56,7 +49,7 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
       width={width}
       mouseEnterHandler={() => setIsMouseEntered(text)}
       mouseLeaveHandler={() => setIsMouseEntered("")}
-      onClick={() => handlePointClick(id)}
+      onClick={() => scrollToPage(id)}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{
         type: "spring",

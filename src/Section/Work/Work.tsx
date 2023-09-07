@@ -8,8 +8,6 @@ import WorkDetail from "./WorkDetail";
 import Done from "../../assets/icon/Done.svg";
 import { css } from "@emotion/css";
 import Link from "@/components/Ui/Link";
-// #E3DEF7
-// #5C3FBF
 
 const WORK_SKILLS: Skill[] = [
   {

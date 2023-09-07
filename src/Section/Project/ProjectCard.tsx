@@ -1,6 +1,5 @@
-import { MotionCard, StyledCard } from "@/components/Ui/Card/Card";
+import { MotionCard } from "@/components/Ui/Card/Card";
 import { Flex, Text } from "@/components/Ui/Template";
-import { css } from "@emotion/css";
 
 const ProjectCard = ({
   title,
