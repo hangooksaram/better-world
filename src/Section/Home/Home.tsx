@@ -48,11 +48,11 @@ const HomeSection = ({
       onClick: (id: number) => {
         scrollToPage(id);
       },
-      detail: "제가 진행했던 프로젝트들을 화인해보세요!",
+      detail: "제가 진행했던 프로젝트들을 확인해보세요!",
     },
   ];
   return (
-    <SectionLayout display={"flex"} justifyContent={"space-between"}>
+    <SectionLayout display="flex" justifyContent="space-between">
       <nav
         className={css`
           padding: 32px;

@@ -1,6 +1,6 @@
 "use client";
 import { css } from "@emotion/css";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import NavigationDetail from "./NavigationDetail";
 import { MotionCard } from "../../components/Ui/Card/Card";
@@ -42,7 +42,7 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
   scrollToPage,
 }) => {
   const [isMouseEntered, setIsMouseEntered] = useState<string>("");
-
+  const [contentPosition, setContentPosition] = useState(0);
   return (
     <MotionCard
       backgroundColor={backgroundColor}
@@ -84,7 +84,12 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
 
       <AnimatePresence>
         {isMouseEntered.includes(text) && (
-          <NavigationDetail isMouseEntered={isMouseEntered} content={detail} />
+          <NavigationDetail
+            isMouseEntered={isMouseEntered}
+            content={detail}
+            contentPosition={contentPosition}
+            setContentPosition={setContentPosition}
+          />
         )}
       </AnimatePresence>
     </MotionCard>

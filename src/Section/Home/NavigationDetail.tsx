@@ -1,41 +1,27 @@
 "use client";
+import { useMoveHorizontalAnimation } from "@/hooks/useMoveHorizontalAnimation";
 import { css } from "@emotion/css";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import React, { ReactNode, SetStateAction, useRef } from "react";
 
 interface NavigationDetailProps {
   content: string;
   isMouseEntered: string;
+  contentPosition: number;
+  setContentPosition: React.Dispatch<SetStateAction<number>>;
 }
 
-const NavigationDetail = ({ content }: NavigationDetailProps) => {
+const NavigationDetail = ({
+  content,
+  contentPosition,
+  setContentPosition,
+}: NavigationDetailProps) => {
   const el = useRef<HTMLDivElement>(null);
-  const [elementWidth, setElementWidth] = useState("");
-  useEffect(() => {
-    setElementWidth(el!.current!.clientWidth.toString());
-  }, [el]);
+  useMoveHorizontalAnimation(el, contentPosition, setContentPosition);
+
   return (
-    <motion.div
-      className={css`
-        height: 100%;
-        display: flex;
-        align-items: center;
-      `}
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          duration: 0.5,
-        },
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.2,
-        },
-      }}
-    >
-      <motion.div
+    <MotionNavigationDetail>
+      <div
         ref={el}
         className={css`
           position: absolute;
@@ -44,16 +30,38 @@ const NavigationDetail = ({ content }: NavigationDetailProps) => {
           z-index: 1;
           white-space: nowrap;
           top: 30%;
+          left: 0;
         `}
-        animate={{
-          x: [120, -parseInt(elementWidth)],
-        }}
-        transition={{ repeat: Infinity, duration: 6 }}
       >
         {content}
-      </motion.div>
-    </motion.div>
+      </div>
+    </MotionNavigationDetail>
   );
 };
+
+const MotionNavigationDetail = ({ children }: { children: ReactNode }) => (
+  <motion.div
+    className={css`
+      height: 100%;
+      display: flex;
+      align-items: center;
+    `}
+    initial={{ opacity: 0 }}
+    animate={{
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    }}
+    exit={{
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
+    }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default NavigationDetail;
