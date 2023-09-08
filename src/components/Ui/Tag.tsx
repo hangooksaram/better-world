@@ -10,7 +10,7 @@ const StyledTag = styled.div(
     alignItems: "center",
     borderRadius: "48px",
     fontSize: "20px",
-
+    border: "1px solid rgba(158, 207, 255, 1)",
     fontWeight: 900,
   },
   ({ color }: { color: string }) => ({
@@ -18,20 +18,8 @@ const StyledTag = styled.div(
   })
 );
 
-const Tag = ({
-  name,
-  proficiency,
-}: {
-  name: string;
-  proficiency: "low" | "medium" | "high" | "veryHigh";
-}) => {
-  const color = {
-    low: "rgba(255, 242, 128,0.5)",
-    medium: "rgba(255, 242, 128,1)",
-    high: "rgba(158, 207, 255, 0.5)",
-    veryHigh: "rgba(158, 207, 255, 1)",
-  };
-  return <StyledTag color={color[proficiency]}>{name}</StyledTag>;
+const Tag = ({ name }: { name: string }) => {
+  return <StyledTag color="white">{name}</StyledTag>;
 };
 
 export default Tag;

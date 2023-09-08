@@ -35,11 +35,7 @@ const WorkSection = () => {
           </Flex>
           <Flex>
             {WORK_SKILLS.map((skill) => (
-              <Tag
-                key={skill.name}
-                name={skill.name}
-                proficiency={skill.proficiency}
-              />
+              <Tag key={skill.name} name={skill.name} />
             ))}
           </Flex>
 

@@ -58,11 +58,7 @@ const ProjectDetail = ({
             `}
           >
             {info?.skills.map((skill) => (
-              <Tag
-                key={skill.name}
-                name={skill.name}
-                proficiency={skill.proficiency}
-              />
+              <Tag key={skill.name} name={skill.name} />
             ))}
           </Flex>
           <div>

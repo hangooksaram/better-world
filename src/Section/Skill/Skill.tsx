@@ -74,8 +74,8 @@ const SkillSection = () => {
           `}
           flexWrap="wrap"
         >
-          {FE_SKILLS.map(({ name, proficiency }) => (
-            <Tag key={name} name={name} proficiency={proficiency} />
+          {FE_SKILLS.map(({ name }) => (
+            <Tag key={name} name={name} />
           ))}
         </Flex>
       </StyledCard>
@@ -93,8 +93,8 @@ const SkillSection = () => {
             `}
             flexWrap="wrap"
           >
-            {BE_SKILL.map(({ name, proficiency }) => (
-              <Tag key={name} name={name} proficiency={proficiency} />
+            {BE_SKILL.map(({ name }) => (
+              <Tag key={name} name={name} />
             ))}
           </Flex>
         </StyledCard>
@@ -111,8 +111,8 @@ const SkillSection = () => {
             `}
             flexWrap="wrap"
           >
-            {DEVOPS_SKILL.map(({ name, proficiency }) => (
-              <Tag key={name} name={name} proficiency={proficiency} />
+            {DEVOPS_SKILL.map(({ name }) => (
+              <Tag key={name} name={name} />
             ))}
           </Flex>
         </StyledCard>
