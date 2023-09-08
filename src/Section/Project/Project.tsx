@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 import { AnimatePresence } from "framer-motion";
 import ProjectDetail from "./ProjectDetail";
 import { Skill } from "../Skill/skillData";
-import { PROJECTS } from "@/constants";
+import { PROJECTS } from "@/contents";
 
 export interface DetailInfo {
   index: number;
